@@ -176,3 +176,39 @@
 20:58:47.025957 table@remove removed @37
 21:51:39.603881 db@close closing
 21:51:39.605880 db@close done T·1.9992ms
+=============== Dec 10, 2018 (WAT) ===============
+22:12:45.327707 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:12:45.331326 version@stat F·[0 1] S·909KiB[0B 909KiB] Sc·[0.00 0.01]
+22:12:45.331326 db@open opening
+22:12:45.331326 journal@recovery F·1
+22:12:45.333032 journal@recovery recovering @39
+22:12:45.383385 memdb@flush created L0@42 N·18770 S·473KiB "n:\x00..ing,v154278":"n:\xff..ong,v166834"
+22:12:45.385396 version@stat F·[1 1] S·1MiB[473KiB 909KiB] Sc·[0.25 0.01]
+22:12:45.396051 db@janitor F·4 G·0
+22:12:45.396051 db@open done T·64.7246ms
+22:12:48.329097 table@compaction L0·1 -> L1·1 S·1MiB Q·171668
+22:12:48.375095 table@build created L1@45 N·20116 S·1MiB "n:\x00..ing,v154278":"version,v1"
+22:12:48.375095 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+22:12:48.376094 table@compaction committed F-1 S-216KiB Ke·0 D·14569 T·46.9975ms
+22:12:48.376094 table@remove removed @42
+22:12:48.377094 table@remove removed @41
+22:13:29.854468 db@close closing
+22:13:29.855444 db@close done T·976.2µs
+=============== Dec 10, 2018 (WAT) ===============
+22:13:37.480710 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:13:37.481723 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+22:13:37.481723 db@open opening
+22:13:37.481723 journal@recovery F·1
+22:13:37.483752 journal@recovery recovering @43
+22:13:37.494510 memdb@flush created L0@46 N·253 S·15KiB "n:\x00..ing,v171846":"n:\xfa..ail,v171728"
+22:13:37.496491 version@stat F·[1 1] S·1MiB[15KiB 1MiB] Sc·[0.25 0.01]
+22:13:37.509486 db@janitor F·4 G·0
+22:13:37.509486 db@open done T·27.7632ms
+22:13:38.148051 table@compaction L0·1 -> L1·1 S·1MiB Q·171900
+22:13:38.172898 table@build created L1@49 N·20278 S·1MiB "n:\x00..ing,v154278":"version,v1"
+22:13:38.172898 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+22:13:38.174913 table@compaction committed F-1 S-5KiB Ke·0 D·91 T·26.8623ms
+22:13:38.174913 table@remove removed @46
+22:13:38.175914 table@remove removed @45
+22:23:13.259899 db@close closing
+22:23:13.259899 db@close done T·0s

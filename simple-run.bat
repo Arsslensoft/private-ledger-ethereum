@@ -1,0 +1,1 @@
+geth --rpc --datadir=devChain  --rpccorsdomain "*" --mine --rpcapi "eth,web3,personal,net,miner,admin,debug" --ws  --wsaddr "0.0.0.0" --wsapi "eth,web3,personal,net,miner,admin,debug" --wsorigins "*" --verbosity 0 --networkid 300 console
