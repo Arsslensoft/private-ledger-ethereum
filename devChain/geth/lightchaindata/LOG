@@ -1,0 +1,26 @@
+=============== Dec 9, 2018 (WAT) ===============
+20:56:57.342872 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:56:57.350869 db@open opening
+20:56:57.355868 version@stat F·[] S·0B[] Sc·[]
+20:56:57.359916 db@janitor F·2 G·0
+20:56:57.359916 db@open done T·9.0473ms
+=============== Dec 9, 2018 (WAT) ===============
+21:00:09.365867 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:00:09.370880 version@stat F·[] S·0B[] Sc·[]
+21:00:09.370880 db@open opening
+21:00:09.371868 journal@recovery F·1
+21:00:09.373910 journal@recovery recovering @1
+21:00:09.381870 memdb@flush created L0@2 N·9 S·561B "H\x04x..\x90ey,v3":"r\x00\x00..\x90ey,v5"
+21:00:09.381870 version@stat F·[1] S·561B[561B] Sc·[0.25]
+21:00:09.391872 db@janitor F·3 G·0
+21:00:09.391872 db@open done T·20.9919ms
+=============== Dec 9, 2018 (WAT) ===============
+21:05:09.214788 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:05:09.215799 version@stat F·[1] S·561B[561B] Sc·[0.25]
+21:05:09.216795 db@open opening
+21:05:09.216795 journal@recovery F·1
+21:05:09.219789 journal@recovery recovering @3
+21:05:09.226785 memdb@flush created L0@5 N·1 S·315B "eth..\x90ey,v11":"eth..\x90ey,v11"
+21:05:09.226785 version@stat F·[2] S·876B[876B] Sc·[0.50]
+21:05:09.237785 db@janitor F·4 G·0
+21:05:09.237785 db@open done T·20.9907ms
