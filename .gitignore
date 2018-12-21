@@ -1,1 +1,5 @@
-/devChain/*
+/devChain/geth
+/devChain/geth/*
+/devChain/keystore
+/devChain/keystore/*
+/devChain/history
