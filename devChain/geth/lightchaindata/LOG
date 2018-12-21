@@ -1,6 +1,0 @@
-=============== Dec 20, 2018 (WAT) ===============
-14:10:59.147660 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-14:10:59.155658 db@open opening
-14:10:59.157681 version@stat F·[] S·0B[] Sc·[]
-14:10:59.162733 db@janitor F·2 G·0
-14:10:59.162733 db@open done T·7.0749ms
