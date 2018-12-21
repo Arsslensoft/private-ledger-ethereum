@@ -15,25 +15,13 @@ To run a private network you need to provide geth with some basic information re
 ```json
 {
     "config":{
-        "chainID": 444444444500,
-        "homesteadBlock": 0,
-        "eip150Block": 0,
-        "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "eip155Block": 0,
-        "eip158Block": 0,
-        "byzantiumBlock": 0,
-        "daoForkSupport": true,
-        "clique": {
-          "period": 1,
-          "epoch": 30000
-        }
+      "chainId": 15,
+      "homesteadBlock": 0,
+      "eip155Block": 0,
+      "eip158Block": 0
      },
      "alloc" : {
-          "12890d2cce102216644c59dae5baed380d84830c": {
-            "balance": "0x90000000000000000000000000"
-          }
      },
-     "coinbase" : "0x0000000000000000000000000000000000000000",
      "difficulty" : "0x1",
      "extraData" : "",
      "gasLimit" : "0xffffffff",
@@ -64,14 +52,48 @@ Let’s explore the configuration file
 
 **parentHash**: Not relevant to a new private network, set to 0
 
-# Running the private ledger
-In the ledger provided in the repository i have created two accounts with password (password).
 
-so in order to simply launch it and login in as **0x12890d2cce102216644c59daE5baed380d84830c** just execute ``run.bat``.
+# Initialize the ledger
+Every blockchain starts with the genesis block. When you run geth with default settings for the first time, the main net genesis block is committed to the database. For a private network, you usually want a different genesis block.
+
+To create a database that uses this genesis block, run the following command. This will import and set the canonical genesis block for your chain.
+
+```shell
+geth --datadir devChain init genesis.json
+```
+
+or simply execute
+``init.bat``
+
+# Running the private ledger
+In order to simply launch it just execute ``run.bat``.
 ![Run](img/run-login.png)
 
-otherwise just run ``simple-run.bat``:
-![Run](img/run-simple.png)
+Or simply execute
+
+```shell
+geth --rpc --datadir=devChain  --rpccorsdomain "*" --rpcapi "eth,web3,personal,net,miner,admin,debug"  --rpcaddr "0.0.0.0" --ws   --wsaddr "0.0.0.0" --wsapi "eth,web3,personal,net,miner,admin,debug" --wsorigins "*" --networkid 300 console
+```
+
+# Bootnode and Network Connectivity
+With all nodes that you want to run initialized to the desired genesis state, you'll need to start a bootstrap node that others can use to find each other in your network and/or over the internet. The clean way is to configure and run a dedicated bootnode:
+```shell
+bootnode --genkey=boot.key
+bootnode --nodekey=boot.key
+```
+
+With the bootnode online, it will display an enode URL that other nodes can use to connect to it and exchange peer information. Make sure to replace the displayed IP address information (most probably [::]) with your externally accessible IP to get the actual enode URL.
+
+Note: You can also use a full fledged Geth node as a bootstrap node.
+
+## Starting Up Your Member Nodes
+With the bootnode operational and externally reachable (you can try telnet <ip> <port> to ensure it's indeed reachable), start every subsequent Geth node pointed to the bootnode for peer discovery via the --bootnodes flag. It will probably also be desirable to keep the data directory of your private network separated, so do also specify a custom --datadir flag.
+
+```shell
+geth --datadir devChain --networkid 300 --bootnodes <bootnode-enode-url-from-above>
+```
+Since your network will be completely cut off from the main and test networks, you'll also need to configure a miner to process transactions and create new blocks for you.
+
 
 # Commands
 Take your time to check this link

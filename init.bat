@@ -1,0 +1,1 @@
+geth --datadir devChain init genesis.json
